@@ -52,6 +52,86 @@
                         </td>
 
                     </tr>
+                    <tr>
+                        <!--Left colum-->
+                        <td>
+                            <label for="email">Email: </label>
+                        </td>
+                        <!--Right Colum-->
+                        <td>
+                            <input type="email" name="email" id="email" placeholder="youremail@email.com" maxlength="50">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="comments">Comments: </label>
+                        </td>
+                        <td>
+                            <textarea name="comments" id="comments" cols="30" rows="10"></textarea>
+                        </td>
+                    
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="favColor">Pick favorite Color</label>
+                        </td>
+                        <td>
+                            <select name="favColor" id="favColor">
+                                <!--new option for each item in drop down menu-->
+                                <option value="red">RED</option>
+                                <option value="blue">BLUE</option>
+                                <option value="green">GREEN</option>
+                                
+                            </select>
+                        </td>
+                    </tr>
+
+
+                    <!--RADIO BUTTONS - restricts users into only allowing them to choose one answer-->
+                    <tr>
+                        <td>
+                            <label for="study">program of study</label>
+                        </td>
+                        <td>
+                            <!--set is grouped by matching NAME values-->
+                            <input type="radio" name="study" value="SE">SOFTWARE ENGINEERING <br>
+                            <input type="radio" name="study" value="CS">CYBER SECURITY <br>
+                            <input type="radio" name="study" value="NE">NETWORKING ENGINEERING <br>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="vehicle">SELECT YOUR VEHICLE</label>
+                        </td>
+
+                        <td>
+                            <input type="checkbox" name="vehicle" value="car">CAR 
+                        </td>
+                        <td>
+                            <input type="checkbox" name="vehicle" value="truck">TRUCK 
+                        </td>
+                        <td>
+                            <input type="checkbox" name="vehicle" value="roci">CTHE ROCINANTE 
+                        </td>
+                        <td>
+                            <input type="checkbox" name="vehicle" value="motorcycle">MOTORCYCLE 
+                        </td>
+                        <td>
+                            <input type="checkbox" name="vehicle" value="bicycle">BYCICLE 
+                        </td>
+
+
+                    </tr>
+                    <!-- DATE -->
+                    <tr>
+                        <td>
+                            <label for="date">DATE</label>
+                        </td>
+                        <td>
+                            <input type="date" name="date" id="date">
+                        </td>
+                    </tr>
+
                 </thead>
                 <!--Table Row-->
                 <tr>
