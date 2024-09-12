@@ -10,8 +10,8 @@
     <title>Week 9 | Demo</title>
 </head>
 <style>
-    .red {
-        border:1px solid red;
+    .border {
+        border:1px solid black;
 
         margin-bottom:10px;
 
@@ -64,7 +64,7 @@
             //add an id and class attribute to the new div element
             //.setAttribute() adds  attributes to elements; provide with attribute type and attribute value
             tempDiv.setAttribute(`id`,`${i}-${people[i].first}`)
-            tempDiv.setAttribute(`class`, `red`)
+            tempDiv.setAttribute(`class`, `border`)
 
             //for every property of the object --> for key in object loop
             for(key in people[i])//for each key (property) in the current object

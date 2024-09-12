@@ -6,28 +6,112 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	
 	<meta name="author" content="Ethan Scheve">
-    <meta name="description" content="W8D1 | Riddles & JS Demo">
+    <meta name="description" content="W9D2 | Reading Elements ">
 <title>Week 9 assaignment</title>
-<style type="text/css">
-	.border{border:1px solid black;}
-</style>
+
 </head>
+<style>
 
+    .border {
+        border:1px solid black;
+
+        margin-bottom:10px;
+
+        min-height:20px;
+        
+    }
+</style>
 <body>
-</body>
+	<!--Heading-->
+    <h1>Week 9 Reading Elements - ETHAN SCHEVE</h1>
+    
 
-<script type="text/javascript">
-	//Use this Array of objects to complete the assignment.
-	var people =[
-		{first:"Peter", last:"Parker", credit:"Spider-Man"},
-		{first:"Gojo", last:"Satoru", credit:"Jujutsu Kaisen" },
-		{first:"Yuji", last:"Itadori", credit:"Jujutsu Kaisen" },
-		{first:"Kevin", last:"McCallister", credit:"Home Alone" },
-		{first:"Godzilla", last:"King of The Monsters", credit:"Godzilla" },
-		{first:"Buzz", last:"Lightyear", credit:"Toy Story" },
-		{first:"Marion", last:"Cobretti", credit:"Cobra" }
+    <script>
+		//the people to be shown
+var people =[
+		{first:"Peter",
+		 last:"Parker",
+		  credit:"Spider-Man"
+		},
+
+		{first:"Gojo"
+		, last:"Satoru",
+		 credit:"Jujutsu Kaisen"
+		 },
+
+		{first:"Yuji",
+		 last:"Itadori",
+		  credit:"Jujutsu Kaisen"
+		 },
+
+		{first:"Kevin",
+		 last:"McCallister",
+		  credit:"Home Alone"
+		 },
+
+		{first:"Godzilla",
+		 last:"King of The Monsters",
+		  credit:"Godzilla"
+		 },
+
+		{first:"Buzz",
+		 last:"Lightyear",
+		  credit:"Toy Story"
+		 },
+
+		{first:"Marion",
+		 last:"Cobretti",
+		  credit:"Cobra"
+		 }
 	]
-	
-</script>
 
+        //Display daenerys info to console
+        console.log(people[0])
+        console.dir(people[0])
+
+        
+        var body = document.querySelector(`body`)
+        console.log(body)  
+
+        
+
+        //start with a standard for loop
+        for(let i = 0; i < people.length; i++)
+        {
+            //add a div to the body element to hold the object's info values
+
+            //create the element
+            var tempDiv = document.createElement(`div`)
+
+            //add an id and class attribute
+            tempDiv.setAttribute(`id`,`${i}-${people[i].first}`)
+            tempDiv.setAttribute(`class`, `border`)
+
+            //for every property of the object --> for key in object loop
+            for(key in people[i])
+            {
+                
+                var p = document.createElement(`p`)
+                
+                
+                var text = document.createTextNode(people[i][key])
+
+                //add the text append to the paragraph element
+                p.appendChild(text)
+                
+                //add the paragraph append element to the div!
+                tempDiv.appendChild(p)
+            }
+
+
+
+
+
+            //add the tempDiv back to the body element
+            body.appendChild(tempDiv)
+        }
+
+
+    </script>
+</body>
 </html>
