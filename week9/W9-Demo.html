@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+	<meta name="author" content="Ethan Scheve">
+    <meta name="description" content="W8D1 | Riddles & JS Demo">
+    <title>Week 9 | Demo</title>
+</head>
+<style>
+    .red {
+        border:1px solid red;
+
+        margin-bottom:10px;
+
+        min-height:20px;
+        
+    }
+</style>
+<body>
+    <h1>Week 9 Demo & Creating Elements in JS</h1>
+    <h3><i>Using the .CreateElement() & .aooendChild() methods</i></h3>
+
+    <script>
+
+        var people=[
+            {first:"daenerys",
+             last:"Targaryen",
+              credit:"Queen of Meereen Khalessi of the Great Grass Sea Mother of Dragons The Unburnt Breaker of CHains Television: Queen of the Andals and the First Men Protector of the Seven Kingdoms Lady of Dragonstone"
+            },
+
+            {first:"cersei",
+             last:"Lannister",
+            credit:"Protector of the Realm Lady Paramount of the Westerlands Lady of Casterly Rock Ligh of the  West Queen Dowage Queen Regent Television: Queen of the Andals and the First Men"
+            },
+            
+            {first:"Yara",
+             last:"Greyjoy",
+            credit:"Queen of the Iron ISlands of Lady Reaper of Pyke"
+            }
+        ]
+
+        //Display daenerys info to console
+        console.log(people[0])
+        console.dir(people[0])
+
+        //select the main element of the document to be able to add to it later
+        var body = document.querySelector(`body`)
+        console.log(body)   //see the acual element and its children (contents)
+        console.dir(body)   //see the properties of the body elements object
+
+        //body.innerHTML += `<div><p>${people[0].first}</p></div>`
+
+        //since we need to do the same thing to each object stored in the array, we will start with a standard for loop
+        for(let i = 0; i < people.length; i++)
+        {
+            //for every object stored to the array, add a div to the body element to hold the object's info (values)
+
+            //create the element - this step alone does NOT write it to the page
+            var tempDiv = document.createElement(`div`)
+
+            //add an id and class attribute to the new div element
+            //.setAttribute() adds  attributes to elements; provide with attribute type and attribute value
+            tempDiv.setAttribute(`id`,`${i}-${people[i].first}`)
+            tempDiv.setAttribute(`class`, `red`)
+
+            //for every property of the object --> for key in object loop
+            for(key in people[i])//for each key (property) in the current object
+            {
+                //create the element to hold the property value
+                var p = document.createElement(`p`)
+                
+                //create the text node to add to the paragraph tag
+                var text = document.createTextNode(people[i][key])
+
+                //add the text (append) to the paragraph element
+                p.appendChild(text)
+                
+                //add the paragraph (append) element to the div!
+                tempDiv.appendChild(p)
+            }
+
+
+
+
+
+            //add the tempDiv back to the body element
+            body.appendChild(tempDiv)
+        }
+
+
+    </script>
+</body>
+</html>
